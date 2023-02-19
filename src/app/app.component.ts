@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'forms';
+  defaultJob= 'fullstack_developer';
+  firstName:string | undefined;
+  
+  @ViewChild('myForm') form: NgForm | undefined;
+
+  onSubmit(){
+    console.log(this.form);
+  }
 }
