@@ -1,6 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,12 +6,5 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
   title = 'forms';
-  defaultJob= 'fullstack_developer';
-  firstName:string | undefined;
-  
-  @ViewChild('myForm') form: NgForm | undefined;
 
-  onSubmit(){
-    console.log(this.form);
-  }
 }
