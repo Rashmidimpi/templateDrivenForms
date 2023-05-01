@@ -5,6 +5,10 @@ import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component'
 
 const routes: Routes = [
   {
+    path: '',
+    component: ReactiveFormComponent ,
+    },
+  {
   path: 'form',
   component: ReactiveFormComponent ,
   },

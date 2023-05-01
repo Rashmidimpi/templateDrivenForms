@@ -16,6 +16,7 @@ export class ReactiveFormComponent implements OnInit {
   age!: string;
   job!: string;
   interest!: string;
+  bio! : string;
 
   @ViewChild('myForm') form: NgForm | any;
   // age= [
@@ -34,6 +35,7 @@ export class ReactiveFormComponent implements OnInit {
     this.email = this.form.value.personalDetails.email;
     this.age = this.form.value.personalDetails.age;
     this.job = this.form.value.job;
+    this.bio = this.form.value.bio;
     this.interest = this.form.value.interest;
 
     this.form.reset();

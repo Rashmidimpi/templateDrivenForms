@@ -1,1 +1,106 @@
-<p>reactiveforms works!</p>
+<div class="wrapper myForm" [ngClass]="formStatus">
+  <div class="title">Registration Form</div>
+
+  <form [formGroup]="reactiveForm" class="form" (ngSubmit)="onSubmit()">
+    <div class="inputfield">
+      <label>First Name</label>
+      <input type="text" class="input" formControlName="firstName" />
+    </div>
+    <div class="error">
+      <span
+        *ngIf="reactiveForm.get('firstName').errors?.['required']"
+        class="error"
+        >First name is required</span
+      >
+      <span
+        *ngIf="reactiveForm.get('firstName').errors?.['noSpaceAllowed']"
+        class="error"
+        >First name cannot contain a space</span
+      >
+    </div>
+    <div class="inputfield">
+      <label>Last Name</label>
+      <input type="text" class="input" formControlName="lastName" />
+    </div>
+    <div class="inputfield">
+      <label>Password</label>
+      <input type="password" class="input" formControlName="password" />
+    </div>
+    <div class="inputfield">
+      <label>Confirm Password</label>
+      <input type="password" class="input" formControlName="confirmPassword" />
+    </div>
+    <div class="inputfield">
+      <label>Gender</label>
+      <div class="custom_select">
+        <select formControlName="gender">
+          <option value="">Select</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+    </div>
+    <div class="inputfield">
+      <label>Age</label>
+      <input
+        type="radio"
+        value="under"
+        formControlName="age"
+      /><label class="light">Under 18</label><br />
+      <input type="radio" value="over" formControlName="age" />
+      <label
+        class="light"
+        >18 or Older</label
+      >
+    </div>
+    <div class="inputfield">
+      <label>Email Address</label>
+      <input type="text" class="input" formControlName="email" />
+    </div>
+    <div class="error">
+      <span
+        *ngIf="
+          !reactiveForm.get('email').valid && reactiveForm.get('email').touched
+        "
+        >The email you entered is not a valid email</span
+      >
+    </div>
+    <div class="inputfield">
+      <label>Phone Number</label>
+      <input type="text" class="input" formControlName="phoneNumber" />
+    </div>
+    <div class="inputfield">
+      <label>Address</label>
+      <textarea class="textarea" formControlName="address"></textarea>
+    </div>
+    <div class="inputfield">
+      <label>Postal Code</label>
+      <input type="text" class="input" formControlName="postalCode" />
+    </div>
+    <div formArrayName="skills">
+      <div
+        *ngFor="let skill of reactiveForm.get('skills')['controls']; index as i"
+        class="inputfield"
+      >
+        <input
+          type="text"
+          placeholder="add skill..."
+          class="input"
+          formControlName="{{ i }}"
+        />
+      </div>
+      <button (click)="addSkills()">Add Skills</button>
+    </div>
+
+    <div class="inputfield terms mt-18">
+      <label class="check">
+        <input type="checkbox" formControlName="tAndc" />
+        <span class="checkmark"></span>
+      </label>
+      <p>Agreed to terms and conditions</p>
+    </div>
+    <div class="inputfield">
+      <button type="submit" class="btn">Register</button>
+    </div>
+  </form>
+</div>
