@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
+import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
+
 
 const routes: Routes = [
   {
     path: '',
-    component: ReactiveFormComponent ,
+    component: TemplateDrivenFormsComponent ,
     },
   {
   path: 'form',
-  component: ReactiveFormComponent ,
+  component: TemplateDrivenFormsComponent ,
   },
   {
     path: 'reactiveForm',
