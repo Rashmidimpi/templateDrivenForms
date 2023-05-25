@@ -37,7 +37,7 @@ export class TemplateDrivenFormsComponent implements OnInit {
     this.bio = this.form.value.bio;
     this.interest = this.form.value.interest;
 
-    this.form.reset();
+    // this.form.reset();
   }
   
   next(){
@@ -57,7 +57,7 @@ export class TemplateDrivenFormsComponent implements OnInit {
     //       firstName: 'Rashmi',
     //       email: 'abc@gmail.com',
     //       age: '',
-    //       password: ''
+    //       password: 'nistnist'
     //     }
 
     //   }
@@ -66,7 +66,7 @@ export class TemplateDrivenFormsComponent implements OnInit {
     this.form.form.patchValue({
       personalDetails:{
               firstName: 'Rashmi',
-              email: 'abc@gmail.com'
+              // email: 'abc@gmail.com'
             }
 
     })

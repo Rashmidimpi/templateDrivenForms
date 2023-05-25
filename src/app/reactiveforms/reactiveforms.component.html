@@ -4,7 +4,7 @@
   <form [formGroup]="reactiveForm" class="form" (ngSubmit)="onSubmit()">
     <div class="inputfield">
       <label>First Name</label>
-      <input type="text" class="input" formControlName="firstName" />
+      <input type="text" class="input" formControlName="firstName" [disabled]="true"/>
     </div>
     <div class="error">
       <span
@@ -58,7 +58,7 @@
       <input type="text" class="input" formControlName="email" />
     </div>
     <div class="error">
-      <span
+      <span style="margin-left: 70px;"
         *ngIf="
           !reactiveForm.get('email').valid && reactiveForm.get('email').touched
         "

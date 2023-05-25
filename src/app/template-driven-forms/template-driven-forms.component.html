@@ -9,7 +9,7 @@
             <legend><span class="number">1</span>Your basic info</legend>
               <label for="name">Name</label>
               <!-- ngModel will tell angular that this i/p element is a control of this form -->
-            <input type="text" id="name" name="firstName" [(ngModel)]="firstName" required #fname="ngModel">
+            <input type="text" id="name" name="firstName" placeholder="Please enter your name" ngModel required  #fname="ngModel">
               <!-- <div>
                 <small *ngIf="fname.invalid && fname.touched">
                   Name is a required field
@@ -74,7 +74,7 @@
           
         </fieldset>
         <!-- <button type="submit" [disabled]="!myForm.valid">Sign up</button> -->
-        <button type="submit">Sign up</button>
+        <button type="submit" [disabled]="!myForm.valid">Sign up</button>
         <button (click)="next()">Next</button>
         
       </form>

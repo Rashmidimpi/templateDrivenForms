@@ -42,8 +42,9 @@ export class ReactiveformsComponent implements OnInit {
       address: new FormControl(null),
       postalCode: new FormControl(null),
       tAndc: new FormControl(null),
-      // this formArray has 3 formcontrol elements
-      skills: new FormArray([new FormControl(null, Validators.required)]),
+      // this formArray has 2 formcontrol elements
+      skills: new FormArray([new FormControl(null, Validators.required),
+        new FormControl(null, Validators.required)]),
     });
 
     // valueChnages in a formcontrol
@@ -52,14 +53,14 @@ export class ReactiveformsComponent implements OnInit {
     // })
 
     // valueChanges in a formGroup
-    //   this.reactiveForm.valueChanges.subscribe((value)=>{
-    //     console.log(value);
-    //   })
+      this.reactiveForm.valueChanges.subscribe((value)=>{
+        console.log(value);
+      })
 
-    this.reactiveForm.statusChanges.subscribe((value) => {
-      console.log(value);
-      this.formStatus = value;
-    });
+    // this.reactiveForm.statusChanges.subscribe((value) => {
+    //   console.log(value);
+    //   this.formStatus = value;
+    // });
 
     // setTimeout(()=>{
     //   this.reactiveForm.setValue({
@@ -105,6 +106,7 @@ export class ReactiveformsComponent implements OnInit {
      });
   }
 
+  // to add a new  ele in array
   addSkills() {
     (<FormArray>this.reactiveForm.get('skills')).push(
       new FormControl(null, Validators.required)
